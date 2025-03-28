@@ -1,0 +1,35 @@
+pipeline:
+  name: packer-test-aws
+  identifier: packertestaws
+  projectIdentifier: Testpackeraws
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: manikantagit
+        repoName: Ansibleproject
+        build: <+input>
+  stages:
+    - stage:
+        name: test-aws
+        identifier: testaws
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec: {}
