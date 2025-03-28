@@ -32,4 +32,12 @@ pipeline:
                   type: Run
                   name: Run_1
                   identifier: Run_1
-                  spec: {}
+                  spec:
+                    shell: Sh
+                    command: |-
+                      wget https://releases.hashicorp.com/packer/latest/packer_1.11.2_linux_amd64.zip # Replace with the latest version
+                      unzip packer_1.11.2_linux_amd64.zip
+                      sudo mv packer /usr/local/bin/
+                      packer --version
+                      cd /path/to/your/packer/code
+                      packer build aws1.pkr.hcl
