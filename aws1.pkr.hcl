@@ -29,6 +29,8 @@ source "amazon-ebs" "amazon-linux" {
   vpc_id                    = "vpc-0879f88c398df87a8"
   associate_public_ip_address = true
   security_group_ids        = ["sg-0a5d6433fa6776e70"]
+  access_key = "YOUR_ACCESS_KEY"
+  secret_key = "YOUR_SECRET_KEY"
 }
 
 build {
